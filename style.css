@@ -1,0 +1,45 @@
+#container {
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 10;
+    
+   
+    
+}
+#titulo{
+    text-align: left;
+    color:blue;
+    margin-top: 17px;
+    letter-spacing: 5px;
+    line-height: 0.5;
+font-size: 70px;
+}
+.p1{
+font-size: 70px;
+}
+.p2{
+font-size: 40%;
+}
+.p3{
+font-size: 100px;
+}
+body{
+     min-height: 100vh;
+    background: linear-gradient(to left, rgb(179, 212, 241), rgb(255, 255, 255) );
+    
+}
+li{
+display: flex;
+margin-bottom: 10px;
+justify-content: space-between;
+align-items: center;
+font-size: 20px;
+width: 200px;
+max-width: 500px;
+}
+.excluir{
+    display: none;
+}
+.concluida{
+    text-decoration: line-through;
+}
