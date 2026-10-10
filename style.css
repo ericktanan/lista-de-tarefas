@@ -268,3 +268,8 @@ color: wheat;
     padding: 5px 5px;
     margin-left: 5px;
 }
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+}
