@@ -1,5 +1,6 @@
 #container {
-    
+    position: relative;
+    z-index: 1;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 10;
     
@@ -7,39 +8,263 @@
     
 }
 #titulo{
+   
     text-align: left;
-    color:blue;
+    color:rgb(4, 4, 1);
     margin-top: 17px;
     letter-spacing: 5px;
     line-height: 0.5;
-font-size: 70px;
+    font-size: 70px;
+   
+    
 }
 .p1{
-font-size: 70px;
+font-size: 80px;
 }
 .p2{
 font-size: 40%;
 }
 .p3{
-font-size: 100px;
+font-size: 120px;
 }
 body{
-     min-height: 100vh;
-    background: linear-gradient(to left, rgb(179, 212, 241), rgb(255, 255, 255) );
+     display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 10px;
+    min-height: 100vh;
+        background: 
+        radial-gradient(circle at 15% 20%, rgba(75, 230, 230, 0.695), transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(76, 222, 255, 0.753), transparent 50%),
+        radial-gradient(circle at 15% 20%, rgba(100, 195, 230, 0.96), transparent 20%),
+        radial-gradient(circle at 85% 80%, rgba(145, 243, 250, 0.778), transparent 100%),
+     
+        linear-gradient(to left, rgb(7, 51, 89), rgb(37, 168, 183) );
     
 }
 li{
 display: flex;
-margin-bottom: 10px;
-justify-content: space-between;
-align-items: center;
-font-size: 20px;
-width: 200px;
-max-width: 500px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 20px;
+    width: 300px;
+    padding: 15px 20px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+
+    transition: 0.2s;
+
+
+
 }
+li:hover{
+transform: translateY(-3px);
+background: rgba(145, 243, 250, 0.778);
+}
+
+
 .excluir{
     display: none;
+    
 }
 .concluida{
     text-decoration: line-through;
+    color: green;
+    opacity: 0.6;
+}
+.linhas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.linha {
+    position: absolute;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.linha1 {
+    width: 300px;
+    top: 20%;
+    left: 5%;
+    transform: rotate(-20deg);
+}
+
+.linha2 {
+    width: 450px;
+    top: 70%;
+    right: 5%;
+    transform: rotate(15deg);
+}
+
+.linha3 {
+    width: 200px;
+    top: 40%;
+    right: 20%;
+    transform: rotate(-45deg);
+}
+
+.linha4 {
+    width: 350px;
+    bottom: 10%;
+    left: 15%;
+    transform: rotate(30deg);
+}
+#lista{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: flex-start;
+
+height: calc(90vh - 200px);
+gap: 15px;
+padding: 0;
+margin: 0;
+
+}
+
+
+
+#adicionar{
+border: none;
+border-radius: 14px;
+padding: 12px 20px;
+cursor: pointer;
+background-color: #03B9B9;
+color: black;
+font-weight: bold;
+font-size: 14px;
+transition: 0.3s;
+margin: 15px;
+}
+#tarefa{
+padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #000000;
+    outline: none;
+    transition: 0.3s;
+}   
+#tarefa:focus{
+    border-color: #4ce6e6;
+}
+#tarefa:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+#adicionar:hover{
+     transform: translateY(-2px);
+}
+.banco{
+    /* Espaçamento e tamanho */
+    padding: 30px;
+    max-width: 750px;
+    
+
+    /* Visual de Vidro Fosco */
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco bem suave */
+    backdrop-filter: blur(10px);          /* Desfoca o gradiente do body ao fundo */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda fina clara */
+    border-radius: 20px;                   /* Cantos bem arredondados */
+
+    /* Sombra para destacar do fundo */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+li button {
+    
+    
+    color: red;
+    cursor: pointer;
+}
+#calendario{
+min-width: 0;
+margin-top: 100px;
+gap: 15px;
+display: none;
+position: relative;
+}
+body.calendario-aberto #calendario {
+display: grid;
+ grid-template-columns: repeat(7, 1fr);
+    max-height: 700px;
+    padding: 30px;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    min-height: 500px;
+    
+}
+
+
+.dia-coluna{
+ 
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    padding: 20px;
+    min-height: 80px;   /* lembra dessa, do passo anterior? */
+    text-align: center;  /* ajuda a centralizar o nome do dia dentro da caixa */
+}
+.dia-coluna li{
+     width: 70%;
+    font-size: 13px;
+    padding: 5px;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+body.calendario-aberto #lista li {
+    width: 180px;
+}
+#toggle-calendario{
+    border: none;
+border-radius: 6px;
+padding: 12px 20px;
+cursor: pointer;
+background-color: #154b81;
+color: black;
+font-weight: bold;
+font-size: 14px;
+transition: 0.3s;
+margin: 10px;
+color: wheat;
+}
+.dia-coluna h3 {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    min-height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+.dia-coluna:last-child {
+    border-right: none;
+}
+#linha-cabecalho {
+    position: absolute;
+    top: 193px;    /* chute inicial — ajusta visualmente até encostar embaixo do h3 */
+    left: 50px;
+    right: 35px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.dia-coluna li button{
+      font-size: 7px;
+    padding: 5px 5px;
+    margin-left: 5px;
 }

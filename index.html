@@ -8,24 +8,63 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="linhas">
+    <span class="linha linha1"></span>
+    <span class="linha linha2"></span>
+    <span class="linha linha3"></span>
+    <span class="linha linha4"></span>
+</div>
+
+    
+    
+    
     <div id="container">
     <h1 id="titulo"><span class="p1">Lista</span> <span class="p2">de</span> <br>
     </br><span class="p3">Tarefas</span></h1>
     
-    
+    <div class = "banco">
     <input placeholder="Digite uma tarefa"
-    id="tarefa"
+    id = "tarefa"
     type="text">
 
     <button id="adicionar">
         Adicionar
     </button>
+    <button id="toggle-calendario">
+        Calendario
+    </button>
     <ul id="lista">
 
 
     </ul>
+    </div>
 </div>
-    
+ <div id="calendario">
+     
+    <div class ="dia-coluna" data-dia="domingo">
+    <h3>Domingo</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="segunda">
+    <h3>Segunda</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="terca">
+    <h3>Terça</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="quarta">
+    <h3>Quarta</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="quinta">
+    <h3>Quinta</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="sexta">
+    <h3>Sexta</h3>
+    </div>
+    <div class ="dia-coluna" data-dia="sabado">
+    <h3>Sabado</h3>
+     </div>
+    <div id="linha-cabecalho"></div>
+
+ </div> 
     
     
     <script src="script.js"></script>
