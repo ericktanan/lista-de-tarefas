@@ -40,7 +40,9 @@ body{
         radial-gradient(circle at 85% 80%, rgba(145, 243, 250, 0.778), transparent 100%),
      
         linear-gradient(to left, rgb(7, 51, 89), rgb(37, 168, 183) );
-    
+    background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
 }
 li{
 display: flex;
@@ -269,7 +271,21 @@ color: wheat;
     margin-left: 5px;
 }
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
+    body { flex-direction: column; align-items: stretch; }
+    #titulo { font-size: 36px; letter-spacing: 2px; }
+    .p1 { font-size: 40px; }
+    .p3 { font-size: 60px; }
+
+    .banco { max-width: 100%; box-sizing: border-box; padding: 20px; }
+
+    #lista { height: auto; }
+    li, body.calendario-aberto #lista li { width: 100%; box-sizing: border-box; }
+
+    #calendario { margin-top: 0; }
+    body.calendario-aberto #calendario {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+        grid-template-columns: repeat(7, minmax(120px, 1fr));
     }
 }
