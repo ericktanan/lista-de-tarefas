@@ -42,7 +42,7 @@ body{
         linear-gradient(to left, rgb(7, 51, 89), rgb(37, 168, 183) );
     background-repeat: no-repeat;
 background-size: cover;
-background-attachment: fixed;
+
 }
 li{
 display: flex;
@@ -288,4 +288,15 @@ color: wheat;
         overflow-x: auto;
         grid-template-columns: repeat(7, minmax(120px, 1fr));
     }
+html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+}
+body.calendario-aberto #calendario {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
 }
