@@ -18,7 +18,7 @@ colunas.forEach((coluna) => {
     coluna.appendChild(itemSelecionado);
     console.log("O DROP DISPAROU!");
     tarefaSelecionada.dia = coluna.dataset.dia;
-     itemSelecionado.querySelector("button").innerText = "Remover"
+     itemSelecionado.querySelector("button").innerText = "↩"
     localStorage.setItem("tarefas", JSON.stringify(tarefas));
   });
 });
@@ -109,9 +109,8 @@ texto.classList.toggle("concluida")
 
   });
 
-item.addEventListener("contextmenu", (event) => {event.preventDefault();
-  excluir.classList.toggle("excluir")  
-})
+
+
     excluir.addEventListener("click", function (event) {
     event.stopPropagation()
 
@@ -120,9 +119,9 @@ item.addEventListener("contextmenu", (event) => {event.preventDefault();
         tarefa.dia = null;
         lista.appendChild(item);
        if(tarefa.dia){
-    excluir.innerText = "Remover";
+    excluir.innerText = "↩";
 } else {
-    excluir.innerText = "Excluir";
+    excluir.innerText = "✕";
 }
         localStorage.setItem("tarefas", JSON.stringify(tarefas));
     } else {
@@ -133,11 +132,11 @@ item.addEventListener("contextmenu", (event) => {event.preventDefault();
         localStorage.setItem("tarefas", JSON.stringify(tarefas));
     }
 })
-excluir.classList.add("excluir");
+
 if(tarefa.dia){
-    excluir.innerText = "Remover";
+    excluir.innerText = "↩";
 } else {
-    excluir.innerText = "Excluir";
+    excluir.innerText = "✕";
 }
 if(tarefa.dia){
     const colunaCerta = document.querySelector(`.dia-coluna[data-dia="${tarefa.dia}"]`);
@@ -147,4 +146,5 @@ if(tarefa.dia){
 }
 item.appendChild(texto);
 item.appendChild(excluir);
-    }
+    
+}
